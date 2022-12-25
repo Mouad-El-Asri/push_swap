@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 18:36:40 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/21 21:59:06 by moel-asr         ###   ########.fr       */
+/*   Updated: 2022/12/25 02:10:12 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_swap(t_list *lst, char c, int banner)
 	if (banner)
 	{
 		if (c == 'a')
-			ft_putstr("sa\n");
+			ft_putstr_fd("sa\n", 1);
 		else
-			ft_putstr("sb\n");
+			ft_putstr_fd("sb\n", 1);
 	}
 }
 
@@ -37,7 +37,7 @@ void	ft_swap_ab(t_list *lst1, t_list *lst2)
 		return ;
 	ft_swap(lst1, 'a', 0);
 	ft_swap(lst2, 'b', 0);
-	ft_putstr("ss");
+	ft_putstr_fd("ss\n", 1);
 }
 
 void	ft_push(t_list **lst1, t_list **lst2, char c)
@@ -47,9 +47,9 @@ void	ft_push(t_list **lst1, t_list **lst2, char c)
 	ft_lstadd_front(lst1, ft_lstnew((*lst2)->content));
 	*lst2 = (*lst2)->next;
 	if (c == 'a')
-		ft_putstr("pa\n");
+		ft_putstr_fd("pa\n", 1);
 	else
-		ft_putstr("pb\n");
+		ft_putstr_fd("pb\n", 1);
 }
 
 void	ft_rotate(t_list **lst, char c, int banner)
@@ -61,9 +61,9 @@ void	ft_rotate(t_list **lst, char c, int banner)
 	if (banner)
 	{
 		if (c == 'a')
-			ft_putstr("ra\n");
+			ft_putstr_fd("ra\n", 1);
 		else
-			ft_putstr("rb\n");
+			ft_putstr_fd("rb\n", 1);
 	}
 }
 
@@ -74,5 +74,5 @@ void	ft_rotate_ab(t_list **lst1, t_list **lst2)
 		return ;
 	ft_rotate(lst1, 'a', 0);
 	ft_rotate(lst2, 'b', 0);
-	ft_putstr("rr");
+	ft_putstr_fd("rr\n", 1);
 }

@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 03:39:54 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/19 11:45:40 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/10/07 13:15:27 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/23 18:21:07 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_putchar(char c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	write(2, &c, 1);
+	int	i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

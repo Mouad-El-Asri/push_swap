@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 11:37:46 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/21 20:18:33 by moel-asr         ###   ########.fr       */
+/*   Updated: 2022/12/23 18:58:07 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,9 @@
 
 void	print_error(void)
 {
-	ft_putstr("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
 }
-
-// void	check_errors(char **argv)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 1;
-// 	while (argv[i])
-// 	{
-// 		j = i + 1;
-// 		while (argv[j])
-// 		{
-// 			if (ft_strcmp(argv[i], argv[j]) == 0)
-// 				print_error();
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
 
 int	check_stack_a(t_list *lst)
 {

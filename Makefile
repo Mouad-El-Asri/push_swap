@@ -6,7 +6,7 @@
 #    By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 13:36:04 by moel-asr          #+#    #+#              #
-#    Updated: 2022/12/21 22:57:23 by moel-asr         ###   ########.fr        #
+#    Updated: 2022/12/23 18:51:18 by moel-asr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ SRCS = push_swap_utils/ft_atoi.c \
 	push_swap_utils/ft_lstlast.c \
 	push_swap_utils/ft_lstnew.c \
 	push_swap_utils/ft_lstsize.c \
-	push_swap_utils/ft_putchar.c \
-	push_swap_utils/ft_putstr.c \
+	push_swap_utils/ft_putchar_fd.c \
+	push_swap_utils/ft_putstr_fd.c \
 	actions_1.c \
 	actions_2.c \
 	check_errors.c \
