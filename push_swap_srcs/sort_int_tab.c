@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 11:46:18 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 17:15:08 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/12/25 23:37:58 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/25 23:38:11 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	main(int argc, char **argv)
+void	sort_int_tab(int *tab, int size)
 {
-	int		i;
-	int		j;
-	t_list	*head_a;
-	t_list	*head_b;
-	char	**strs;
+	int	i;
+	int	j;
+	int	c;
 
-	i = 1;
-	head_a = NULL;
-	head_b = NULL;
-	if (argc > 1)
+	i = 0;
+	c = 0;
+	while (i < size)
 	{
-		while (argv[i])
+		j = i + 1;
+		while (j < size)
 		{
-			j = 0;
-			strs = ft_split(argv[i], ' ');
-			while (strs[j])
-				ft_lstadd_back(&head_a, ft_lstnew(ft_atoi(strs[j++])));
-			i++;
+			if (tab[i] > tab[j])
+			{
+				c = tab[i];
+				tab[i] = tab[j];
+				tab [j] = c;
+			}
+			j++;
 		}
+		i++;
 	}
-	if (check_stack_a(head_a) == 0)
-		return (0);
-	sort_stacks(&head_a, &head_b);
-	return (0);
 }

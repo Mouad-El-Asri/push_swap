@@ -1,48 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_errors.c                                     :+:      :+:    :+:   */
+/*   put_stack_to_arr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 11:37:46 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/23 18:58:07 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/12/25 23:38:58 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/26 15:58:50 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	print_error(void)
+int	*put_stack_to_arr(t_list *lst)
 {
-	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
-}
-
-int	check_stack_a(t_list *lst)
-{
+	int		*arr;
 	int		i;
-	int		j;
-	int		rtn;
-	int		len;
-	t_list	*tmp;
 
 	i = 0;
-	rtn = 0;
-	len = ft_lstsize(lst);
-	while (i++ < len)
+	arr = malloc(sizeof(int) * ft_lstsize(lst));
+	while (lst)
 	{
-		tmp = lst;
-		j = i;
-		while (j < len)
-		{
-			if (lst->content == tmp->next->content)
-				print_error();
-			if (lst->content > tmp->next->content)
-				rtn++;
-			tmp = tmp->next;
-			j++;
-		}
+		arr[i] = lst->content;
 		lst = lst->next;
+		i++;
 	}
-	return (rtn);
+	return (arr);
 }

@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   sort_medium_stack.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 20:20:03 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 16:58:04 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/12/26 15:55:26 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/26 15:59:03 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_atoi(const char *str)
+void	sort_medium_stack(t_list **lst1, t_list **lst2)
 {
-	int	i;
-	int	num;
-	int	sign;
+	int		i;
+	int		len;
+	int		small_num;
+	t_list	*tmp;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	if (str[i] == '-' && ++i)
-		sign *= -1;
-	else if (str[i] == '+')
-		i++;
-	while (str[i])
+	len = ft_lstsize(*lst1);
+	tmp = *lst1;
+	small_num = tmp->content;
+	while (i < len - 3)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			print_error();
-		num = num * 10 + (str[i] - 48);
-		if (sign == 1 && num != 0 && (INT_MAX / num) < 1)
-			print_error();
-		else if (sign == -1 && num != 0 && \
-			((INT_MIN / num) > -1 && num != INT_MIN))
-			print_error();
+		tmp = *lst1;
+		small_num = tmp->content;
+		while (tmp)
+		{
+			if (tmp->content < small_num)
+				small_num = tmp->content;
+			tmp = tmp->next;
+		}
+		find_and_push(lst1, lst2, small_num, 'b');
 		i++;
 	}
-	return (num * sign);
+	sort_small_stack(lst1);
+	while (i--)
+		ft_push(lst1, lst2, 'a');
 }

@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   put_index_to_stack.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 11:46:18 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 17:15:08 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/12/26 00:14:17 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/26 18:13:25 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	put_index_to_stack(t_list *lst, int *arr)
 {
 	int		i;
 	int		j;
-	t_list	*head_a;
-	t_list	*head_b;
-	char	**strs;
+	t_list	*tmp;
 
-	i = 1;
-	head_a = NULL;
-	head_b = NULL;
-	if (argc > 1)
+	i = 0;
+	while (i < ft_lstsize(lst))
 	{
-		while (argv[i])
+		j = 0;
+		tmp = lst;
+		while (j < ft_lstsize(lst))
 		{
-			j = 0;
-			strs = ft_split(argv[i], ' ');
-			while (strs[j])
-				ft_lstadd_back(&head_a, ft_lstnew(ft_atoi(strs[j++])));
-			i++;
+			if (arr[i] == tmp->content)
+			{
+				tmp->content = i;
+				break ;
+			}
+			tmp = tmp->next;
+			j++;
 		}
+		i++;
 	}
-	if (check_stack_a(head_a) == 0)
-		return (0);
-	sort_stacks(&head_a, &head_b);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 13:49:35 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/25 02:23:05 by moel-asr         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:13:21 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
-#include <stdio.h> // delete
 
 typedef struct s_list
 {
@@ -38,27 +37,29 @@ t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
-void	print_error(void);
-int		check_stack_a(t_list *lst);
-
+char	**ft_split(char const *s, char c);
+char	*ft_strdup(const char *str);
+size_t	ft_strlen(const char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	ft_swap(t_list *lst, char c, int banner);
 void	ft_swap_ab(t_list *lst1, t_list *lst2);
 void	ft_push(t_list **lst1, t_list **lst2, char c);
 void	ft_rotate(t_list **lst, char c, int banner);
 void	ft_rotate_ab(t_list **lst1, t_list **lst2);
-void	ft_reverse_rotate(t_list **lst, char c, int banner);
-void	ft_reverse_rotate_ab(t_list **lst1, t_list **lst2);
-
-void	sort_small_stack(t_list **lst);
-void	sort_medium_stack(t_list **lst1, t_list **lst2);
-
-int		*put_stack_to_arr(t_list *lst);
-void	ft_sort_int_tab(int *tab, int size);
-void	put_index_to_stack(t_list *lst, int *arr);
+void	ft_rrotate(t_list **lst, char c, int banner);
+void	ft_rrotate_ab(t_list **lst1, t_list **lst2);
+void	print_error(void);
+int		check_stack_a(t_list *lst);
+void	find_and_push(t_list **lst1, t_list **lst2, int num, char c1);
 int		find_index(t_list *lst, int num);
 void	init_t_chunks(t_chunks *var, t_list *lst, int div);
-void	sort_big_stack(t_list **lst1, t_list **lst2);
+void	put_index_to_stack(t_list *lst, int *arr);
+int		*put_stack_to_arr(t_list *lst);
+void	sort_big_stack(t_list **lst1, t_list **lst2, int divisor);
 void	sort_big_stack2(t_list **lst1, t_list **lst2);
+void	sort_int_tab(int *tab, int size);
+void	sort_medium_stack(t_list **lst1, t_list **lst2);
+void	sort_small_stack(t_list **lst);
 void	sort_stacks(t_list **lst1, t_list **lst2);
 
 #endif

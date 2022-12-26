@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 20:20:03 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 16:58:04 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/10/05 16:26:57 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/26 16:29:58 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_atoi(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
-	int	num;
-	int	sign;
+	size_t	i;
 
 	i = 0;
-	num = 0;
-	sign = 1;
-	if (str[i] == '-' && ++i)
-		sign *= -1;
-	else if (str[i] == '+')
-		i++;
 	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			print_error();
-		num = num * 10 + (str[i] - 48);
-		if (sign == 1 && num != 0 && (INT_MAX / num) < 1)
-			print_error();
-		else if (sign == -1 && num != 0 && \
-			((INT_MIN / num) > -1 && num != INT_MIN))
-			print_error();
 		i++;
-	}
-	return (num * sign);
+	return (i);
 }

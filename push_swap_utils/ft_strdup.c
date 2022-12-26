@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/19 11:46:18 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 17:15:08 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/10/06 18:25:32 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/26 16:28:27 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *str)
 {
 	int		i;
-	int		j;
-	t_list	*head_a;
-	t_list	*head_b;
-	char	**strs;
+	char	*cp;
 
-	i = 1;
-	head_a = NULL;
-	head_b = NULL;
-	if (argc > 1)
+	i = 0;
+	cp = (char *)malloc ((ft_strlen(str) * sizeof(char)) + 1);
+	if (!cp)
+		return (NULL);
+	while (str[i])
 	{
-		while (argv[i])
-		{
-			j = 0;
-			strs = ft_split(argv[i], ' ');
-			while (strs[j])
-				ft_lstadd_back(&head_a, ft_lstnew(ft_atoi(strs[j++])));
-			i++;
-		}
+		cp[i] = str[i];
+		i++;
 	}
-	if (check_stack_a(head_a) == 0)
-		return (0);
-	sort_stacks(&head_a, &head_b);
-	return (0);
+	cp[i] = '\0';
+	return (cp);
 }

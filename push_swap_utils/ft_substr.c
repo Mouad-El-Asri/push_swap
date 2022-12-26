@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 20:20:03 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 16:58:04 by moel-asr         ###   ########.fr       */
+/*   Created: 2022/10/09 14:51:39 by moel-asr          #+#    #+#             */
+/*   Updated: 2022/12/26 16:27:37 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_atoi(const char *str)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	num;
-	int	sign;
+	char	*sub;
+	size_t	i;
 
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	sub = (char *)malloc (len * sizeof(char) + 1);
+	if (!sub)
+		return (NULL);
 	i = 0;
-	num = 0;
-	sign = 1;
-	if (str[i] == '-' && ++i)
-		sign *= -1;
-	else if (str[i] == '+')
-		i++;
-	while (str[i])
+	while (i < len)
 	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			print_error();
-		num = num * 10 + (str[i] - 48);
-		if (sign == 1 && num != 0 && (INT_MAX / num) < 1)
-			print_error();
-		else if (sign == -1 && num != 0 && \
-			((INT_MIN / num) > -1 && num != INT_MIN))
-			print_error();
+		sub[i] = s[i + start];
 		i++;
 	}
-	return (num * sign);
+	sub[i] = '\0';
+	return (sub);
 }
