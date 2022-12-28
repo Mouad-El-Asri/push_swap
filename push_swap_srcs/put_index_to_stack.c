@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 00:14:17 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 18:13:25 by moel-asr         ###   ########.fr       */
+/*   Updated: 2022/12/28 03:32:00 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	put_index_to_stack(t_list *lst, int *arr)
 		{
 			if (arr[i] == tmp->content)
 			{
-				tmp->content = i;
+				tmp->index = i;
 				break ;
 			}
 			tmp = tmp->next;

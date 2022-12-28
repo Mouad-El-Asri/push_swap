@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 22:48:05 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/26 18:13:37 by moel-asr         ###   ########.fr       */
+/*   Updated: 2022/12/28 03:31:52 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sort_big_stack(t_list **lst1, t_list **lst2, int divisor)
 		tmp = *lst1;
 		while (tmp)
 		{
-			if ((tmp->content >= var.min) && (tmp->content) < var.max)
+			if ((tmp->index >= var.min) && (tmp->index) < var.max)
 			{
 				find_and_push(lst1, lst2, tmp->content, 'b');
 				tmp = *lst1;

@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 21:16:51 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/25 21:21:30 by moel-asr         ###   ########.fr       */
+/*   Updated: 2022/12/28 03:15:38 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_rotate(t_list **lst, char c, int banner)
 
 	if (!*lst || (ft_lstsize(*lst) < 2))
 		return ;
-	ft_lstadd_back(lst, ft_lstnew((*lst)->content));
+	ft_lstadd_back(lst, ft_lstnew((*lst)->content, (*lst)->index));
 	tmp = *lst;
 	*lst = (*lst)->next;
 	free(tmp);
