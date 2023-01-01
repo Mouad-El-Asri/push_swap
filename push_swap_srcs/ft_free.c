@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/25 21:17:01 by moel-asr          #+#    #+#             */
-/*   Updated: 2023/01/01 07:39:31 by moel-asr         ###   ########.fr       */
+/*   Created: 2023/01/01 07:48:55 by moel-asr          #+#    #+#             */
+/*   Updated: 2023/01/01 08:01:36 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_swap(t_list *lst, char c, int banner)
+void	ft_free(char **strs)
 {
-	int	tmp1;
-	int	tmp2;
+	int	i;
 
-	if (!lst || (ft_lstsize(lst) < 2))
-		return ;
-	tmp1 = lst->content;
-	tmp2 = lst->index;
-	lst->content = lst->next->content;
-	lst->index = lst->next->index;
-	lst->next->content = tmp1;
-	lst->next->index = tmp2;
-	if (banner)
-	{
-		if (c == 'a')
-			ft_putstr_fd("sa\n", 1);
-		else
-			ft_putstr_fd("sb\n", 1);
-	}
+	i = 0;
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
 }

@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 23:35:39 by moel-asr          #+#    #+#             */
-/*   Updated: 2022/12/28 03:34:35 by moel-asr         ###   ########.fr       */
+/*   Updated: 2023/01/01 08:45:37 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	sort_stacks(t_list **lst1, t_list **lst2)
 		sort_big_stack(lst1, lst2, 12);
 		sort_big_stack2(lst1, lst2);
 	}
+	free(arr);
 }
