@@ -21,7 +21,7 @@ void	find_and_push(t_list **lst1, t_list **lst2, int num, char c1)
 	if (c1 == 'a')
 		c2 = 'b';
 	count = find_index(*lst1, num);
-	if (count < (ft_lstsize(*lst1) / 2))
+	if (count <= (ft_lstsize(*lst1) / 2))
 	{
 		while (count > 1)
 		{
@@ -29,7 +29,7 @@ void	find_and_push(t_list **lst1, t_list **lst2, int num, char c1)
 			count--;
 		}
 	}
-	else if (count >= (ft_lstsize(*lst1) / 2))
+	else if (count > (ft_lstsize(*lst1) / 2))
 	{
 		while (count <= ft_lstsize(*lst1))
 		{
