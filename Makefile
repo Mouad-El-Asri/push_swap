@@ -6,7 +6,7 @@
 #    By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/18 13:36:04 by moel-asr          #+#    #+#              #
-#    Updated: 2023/01/01 08:23:45 by moel-asr         ###   ########.fr        #
+#    Updated: 2023/01/08 18:27:06 by moel-asr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SRCS = push_swap_utils/ft_atoi.c \
 	actions/ft_swap_ab.c \
 	actions/ft_swap.c \
 	push_swap_srcs/check_errors.c \
+	push_swap_srcs/check_null_and_space.c \
 	push_swap_srcs/find_and_push.c \
 	push_swap_srcs/find_index.c \
 	push_swap_srcs/ft_free.c \

@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/19 11:46:18 by moel-asr          #+#    #+#             */
-/*   Updated: 2023/01/01 08:42:28 by moel-asr         ###   ########.fr       */
+/*   Updated: 2023/01/10 23:56:07 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	main(int argc, char **argv)
 	{
 		while (argv[i])
 		{
+			check_null_and_space(argv[i]);
 			j = 0;
-			strs = ft_split(argv[i], ' ');
+			strs = ft_split(argv[i++], ' ');
 			while (strs[j])
 				ft_lstadd_back(&head_a, ft_lstnew(ft_atoi(strs[j++]), 0));
 			ft_free(strs);
-			i++;
 		}
 	}
 	if (check_stack_a(head_a) == 0)

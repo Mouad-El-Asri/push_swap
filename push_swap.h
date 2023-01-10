@@ -6,7 +6,7 @@
 /*   By: moel-asr <moel-asr@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 13:49:35 by moel-asr          #+#    #+#             */
-/*   Updated: 2023/01/01 07:50:31 by moel-asr         ###   ########.fr       */
+/*   Updated: 2023/01/08 18:25:30 by moel-asr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ft_rotate_ab(t_list **lst1, t_list **lst2);
 void	ft_rrotate(t_list **lst, char c, int banner);
 void	ft_rrotate_ab(t_list **lst1, t_list **lst2);
 void	print_error(void);
+void	check_null_and_space(char *str);
 int		check_stack_a(t_list *lst);
 void	find_and_push(t_list **lst1, t_list **lst2, int num, char c1);
 int		find_index(t_list *lst, int num);
